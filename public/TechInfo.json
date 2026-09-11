@@ -260,16 +260,6 @@
     "badge": "Fast"
   },
   {
-    "id": "prisma",
-    "name": "Prisma",
-    "category": "Backend",
-    "description": "A modern ORM that provides type-safe database access for JavaScript and TypeScript applications.",
-    "icon": "https://icon.icepanel.io/Technology/svg/Prisma.svg",
-    "rating": 4.6,
-    "difficulty": "Intermediate",
-    "badge": "Type-Safe"
-  },
-  {
     "id": "webpack",
     "name": "Webpack",
     "category": "Build Tool",
@@ -404,20 +394,10 @@
     "name": "React Router",
     "category": "Frontend",
     "description": "A routing library for building navigation and multi-page experiences in React applications.",
-    "icon": "https://icon.icepanel.io/Technology/svg/React-Router.svg",
+    "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAne5Eo_t-jRLEmSTSSioJ9VusPT_--MW79QGNKWT3Zw&s=10",
     "rating": 4.8,
     "difficulty": "Intermediate",
     "badge": "Popular"
-  },
-  {
-    "id": "zustand",
-    "name": "Zustand",
-    "category": "State Management",
-    "description": "A small and flexible state management library for React applications.",
-    "icon": "https://icon.icepanel.io/Technology/svg/Zustand.svg",
-    "rating": 4.6,
-    "difficulty": "Beginner-Friendly",
-    "badge": "Lightweight"
   },
   {
     "id": "storybook",
@@ -444,7 +424,7 @@
     "name": "Prettier",
     "category": "Development Tools",
     "description": "An opinionated code formatter that keeps source code consistent and readable.",
-    "icon": "https://icon.icepanel.io/Technology/svg/Prettier.svg",
+    "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAtA_IbdsHcaVo4JiQq8yzhWEimQA2IyhZha6KHZmLGw&s=10",
     "rating": 4.7,
     "difficulty": "Beginner-Friendly",
     "badge": "Formatter"
@@ -454,7 +434,7 @@
     "name": "Supabase",
     "category": "Backend",
     "description": "An open-source backend platform providing database, authentication, storage, and APIs.",
-    "icon": "https://icon.icepanel.io/Technology/svg/Supabase.svg",
+    "icon": "data:image/png;base64,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",
     "rating": 4.8,
     "difficulty": "Intermediate",
     "badge": "Backend"

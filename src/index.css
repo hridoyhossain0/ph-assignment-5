@@ -1,2 +1,9 @@
 @import 'tailwindcss';
 @plugin "daisyui";
+
+
+.addedStack {
+    background-color: gainsboro;
+    color: black;
+    font-weight: 700;
+}
