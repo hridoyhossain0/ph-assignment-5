@@ -3,7 +3,7 @@ import Banner from '../../assets/banner-stack.png';
 const Hero = () => {
     return (
         <>
-            <div className='mt-50 flex container mx-auto justify-between  items-center'>
+            <div className='mt-55 mb-24 flex container mx-auto justify-between  items-center'>
                 <div className='space-y-8'>
                     <h1 className='text-7xl font-extrabold'>Build Your Ideal<br/> <span className='bg-gradient-to-r from-orange-400 via-pink-400 to-purple-700 bg-clip-text text-transparent'>Development Stack</span></h1>
                     <p className='text-2xl'>Explore frontend, backend, database, and tooling options,<br/> compare them side by side, and put together the stack that fits your<br/> next project.</p>
