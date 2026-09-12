@@ -3,10 +3,10 @@ import type TechType from '../Types/TechType';
 
 interface AddSteckProps {
     addStack : TechType[];
-    handleAddStack : (tech: TechType) => void;
+    handleRemoveStack: (tech: TechType) => void;
 }
 
-const AddSteck = ({addStack,   handleAddStack} : AddSteckProps ) => {
+const AddSteck = ({addStack,   handleRemoveStack } : AddSteckProps ) => {
     return (
         <div>
             {
@@ -19,8 +19,8 @@ const AddSteck = ({addStack,   handleAddStack} : AddSteckProps ) => {
                             <p>{Stack.name}</p>
                             <p>{Stack.category}</p>
                         </div>
-                        <div>
-                            <button onClick={() =>  handleAddStack(Stack)}><RxCross2 /></button>
+                        <div >
+                            <button className='cursor-pointer' onClick={() =>  handleRemoveStack (Stack)}><RxCross2 /></button>
                         </div>
 
                     </div>

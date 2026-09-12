@@ -47,7 +47,7 @@ const Nav = () => {
 
                     {/* signin/up button */}
                     <div className="flex gap-2 lg:gap-5">
-                        <button>
+                        <button className='cursor-pointer font-semibold hover:text-gray-600'>
                             Sign In
                         </button>
 

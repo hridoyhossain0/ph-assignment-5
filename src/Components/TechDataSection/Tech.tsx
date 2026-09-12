@@ -1,4 +1,5 @@
 import  { use, useState } from 'react';
+import { toast } from "react-toastify";
 import type TechType from '../Types/TechType';
 import TechCard from './TechCard';
 import AddSteck from '../yourSteckSectionData/AddSteck';
@@ -14,14 +15,34 @@ const Tech = ({PromiseTech}: TechProps) => {
     const [addStack, setAddStack] = useState<TechType[]>([])
     
     const handleAddStack = (tech: TechType): void => {
-        if (addStack.some(item => item.id === tech.id)) {
-            setAddStack(prev =>
-                prev.filter(item => item.id !== tech.id)
-            );
-        } else {
-            setAddStack(prev => [...prev, tech]);
+    const alreadyAdded = addStack.some(item => item.id === tech.id);
+
+        if (alreadyAdded) {
+            toast.warning(`${tech.name} is already in your stack`);
+            return;
         }
-    }
+
+        setAddStack(prev => [...prev, tech]);
+        toast.success(`${tech.name} added to your stack`);
+    };
+
+    const handleRemoveStack = (tech: TechType): void => {
+        setAddStack(prev =>
+            prev.filter(item => item.id !== tech.id)
+        );
+
+        toast.info(`${tech.name} removed from your stack`);
+    }; 
+
+    const handleRemoveAll = (): void => {
+        if (addStack.length === 0) {
+            toast.warning("Your stack is already empty");
+            return;
+        }
+
+        setAddStack([]);
+        toast.error("All technologies removed from your stack");
+    };
 
     const yourSteckButton = addStack.length === 0 ? "Your stack is empty" : "Remove All"
 
@@ -53,11 +74,11 @@ const Tech = ({PromiseTech}: TechProps) => {
                     <p className='text-lg'>{yourSteck}</p>
                     <AddSteck 
                     addStack={addStack}
-                    handleAddStack={handleAddStack}
+                    handleRemoveStack={handleRemoveStack}
                     />
                     <button 
-                    onClick={() => setAddStack([])}
-                    className={`text-xl rounded-2xl font-semibold w-full hover:border-0 hover:shadow ${addStack.length === 0 ? 'whenNoSteckButton' : 'whenAddSteckButton' }`}>{yourSteckButton}</button>
+                    onClick={handleRemoveAll}
+                    className={`text-xl rounded-2xl font-semibold w-full cursor-pointer hover:border-0 hover:shadow ${addStack.length === 0 ? 'whenNoSteckButton' : 'whenAddSteckButton' }`}>{yourSteckButton}</button>
                 </div>
             </div>
         </div>

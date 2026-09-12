@@ -1,6 +1,5 @@
 import { FaStar } from "react-icons/fa";
 import type TechType from "../Types/TechType";
-// import { useState } from "react";
 
 export interface TechCardProps{
     tech : TechType;
@@ -10,13 +9,7 @@ export interface TechCardProps{
 
 const TechCard = ({tech , handleAddStack,  isAdded}: TechCardProps) => {
 
-    // const [stack, setStack] = useState<boolean>(false)
-
-
-    // const HandleClick = ()=> {
-    //     setStack(!stack)
-    //     handleAddStack(tech)
-    // }
+   
 
     return (
         <div className="flex flex-col h-full  min-h-[380px]  rounded-2xl border-gray-600  shadow-sm p-5 ">
@@ -46,13 +39,13 @@ const TechCard = ({tech , handleAddStack,  isAdded}: TechCardProps) => {
             <h2 className="text-2xl font-bold">{tech.name}</h2>
             <p className="text-xl mb-2  ">{tech.description}</p>
             <div className="flex mt-auto items-center text-[clamp(8px,5vw,19px)]  justify-between">
-                <p className="btn btn-soft rounded-lg">{tech.category}</p>
+                <p className="btn btn-secondary rounded-lg">{tech.category}</p>
                 <p>{tech.difficulty}</p>
                 <p className="flex gap-2.5 items-center"><FaStar className="text-yellow-300"/>{tech.rating}</p>
             </div>
             <button 
 
-                className={`w-full mt-8 text-white rounded-xl py-3  ${
+                className={`w-full mt-8 text-white cursor-pointer rounded-xl py-3  ${
                 isAdded
                     ? "bg-green-500 hover:bg-green-600"
                     : "bg-black hover:bg-gray-600"
