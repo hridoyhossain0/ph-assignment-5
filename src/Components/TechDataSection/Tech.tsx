@@ -34,9 +34,9 @@ const Tech = ({PromiseTech}: TechProps) => {
                 <p className='text-2xl'>Pick one technology per category to build your ideal stack.</p>
 
             </div>
-            <div className='grid gap-7 grid-cols-3 w-full md:grid-cols-3 lg:grid-cols-4'>
-                <div className='col-span-2 md:col-span-2 lg:col-span-3'>
-                    <div className='grid gap-7 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 '>
+            <div className='grid gap-7 grid-cols-3 w-full  lg:grid-cols-3 xl:grid-cols-4'>
+                <div className='col-span-2 lg:col-span-2 xl:col-span-3'>
+                    <div className='grid gap-7 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 '>
                         {techs.map(tech => <TechCard
                         key={tech.id}
                         tech={tech}
