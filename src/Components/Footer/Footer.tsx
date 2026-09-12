@@ -44,7 +44,7 @@ const Footer = () => {
                 </div>
 
                 <div className='divider container'></div>
-                <div className='flex justify-between'>
+                <div className='flex pb-5 text-lg justify-between'>
                     <div>
                         <p>&copy; 2026 Dev Stack All rights reserved.</p>
                     </div>

@@ -7,3 +7,14 @@
     color: black;
     font-weight: 700;
 }
+
+.whenNoSteckButton {
+    padding: 30px 0;
+    border: 1px dashed rgb(185, 180, 180);
+}
+
+.whenAddSteckButton {
+    padding: 10px 0;
+    border: 1px solid rgb(132, 206, 132);
+
+}

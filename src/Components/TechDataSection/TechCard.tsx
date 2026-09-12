@@ -1,21 +1,22 @@
 import { FaStar } from "react-icons/fa";
 import type TechType from "../Types/TechType";
-import { useState } from "react";
+// import { useState } from "react";
 
 export interface TechCardProps{
     tech : TechType;
-    handleAddStack : (tech: TechType) => void
+    handleAddStack : (tech: TechType) => void;
+    isAdded: boolean;
 }
 
-const TechCard = ({tech , handleAddStack}: TechCardProps) => {
+const TechCard = ({tech , handleAddStack,  isAdded}: TechCardProps) => {
 
-    const [stack, setStack] = useState<boolean>(false)
+    // const [stack, setStack] = useState<boolean>(false)
 
 
-    const HandleClick = ()=> {
-        setStack(!stack)
-        handleAddStack(tech)
-    }
+    // const HandleClick = ()=> {
+    //     setStack(!stack)
+    //     handleAddStack(tech)
+    // }
 
     return (
         <div className="flex flex-col h-full min-h-[380px] rounded-2xl border-gray-600  shadow-sm p-5 ">
@@ -49,7 +50,17 @@ const TechCard = ({tech , handleAddStack}: TechCardProps) => {
                 <p>{tech.difficulty}</p>
                 <p className="flex gap-2.5 items-center"><FaStar className="text-yellow-300"/>{tech.rating}</p>
             </div>
-            <button className={`w-full mt-8 bg-black text-white rounded-xl py-3 transition hover:bg-gray-600 ${stack && 'addedStack'}`} onClick={HandleClick}>{stack ? "✓ Added to Stack" : 'Add to Stack' }</button>
+            <button 
+
+                className={`w-full mt-8 text-white rounded-xl py-3  ${
+                isAdded
+                    ? "bg-green-500 hover:bg-green-600"
+                    : "bg-black hover:bg-gray-600"
+
+                }`} 
+                onClick={() => handleAddStack(tech)}
+            >
+                {isAdded ? "✓ Added to Stack" : 'Add to Stack' }</button>
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import  { use, useState } from 'react';
 import type TechType from '../Types/TechType';
 import TechCard from './TechCard';
+import AddSteck from '../yourSteckSectionData/AddSteck';
 
 export interface  TechProps {
     PromiseTech : Promise<TechType[]>
@@ -13,16 +14,16 @@ const Tech = ({PromiseTech}: TechProps) => {
     const [addStack, setAddStack] = useState<TechType[]>([])
     
     const handleAddStack = (tech: TechType): void => {
-        if(addStack.includes(tech)) {
-            const remaningStack = addStack.filter(f => f !== tech)
-            setAddStack(remaningStack)
-            
-        }
-        else {
-            const addNewStack = [...addStack, tech];
-            setAddStack(addNewStack)
+        if (addStack.some(item => item.id === tech.id)) {
+            setAddStack(prev =>
+                prev.filter(item => item.id !== tech.id)
+            );
+        } else {
+            setAddStack(prev => [...prev, tech]);
         }
     }
+
+    const yourSteckButton = addStack.length === 0 ? "Your stack is empty" : "Remove All"
 
     const yourSteck = addStack.length === 0 ?  'No technologies selected yet' :  `${addStack.length} Technology Selected`   ;
         
@@ -40,16 +41,23 @@ const Tech = ({PromiseTech}: TechProps) => {
                         key={tech.id}
                         tech={tech}
                         handleAddStack={handleAddStack}
+                        isAdded={addStack.some(item => item.id === tech.id)}
 
                         /> )}
                     </div>
 
                 </div>
                     
-                <div className='  rounded-2xl space-y-3 border-gray-500 col-span-1 self-start shadow-sm p-5'>
+                <div className=' rounded-2xl space-y-3 border-gray-500 col-span-1 self-start shadow-sm p-5'>
                     <h1 className='text-2xl font-bold'>Your Stack</h1>
                     <p className='text-lg'>{yourSteck}</p>
-                    <button className='btn btn-dash btn-accent text-xl py-12 rounded-2xl w-full'>Your stack is empty</button>
+                    <AddSteck 
+                    addStack={addStack}
+                    handleAddStack={handleAddStack}
+                    />
+                    <button 
+                    onClick={() => setAddStack([])}
+                    className={`text-xl rounded-2xl font-semibold w-full hover:border-0 hover:shadow ${addStack.length === 0 ? 'whenNoSteckButton' : 'whenAddSteckButton' }`}>{yourSteckButton}</button>
                 </div>
             </div>
         </div>
