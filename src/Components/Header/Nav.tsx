@@ -35,7 +35,7 @@ const Nav = () => {
                             
                      
                         <span
-                            className="text-4xl font-bold   items-center z-20
+                            className="text-2xl font-bold   xl:text-4xl items-center z-20
                             bg-linear-to-r from-orange-400 via-pink-400 to-violet-800
                             bg-clip-text text-transparent"
                         >
