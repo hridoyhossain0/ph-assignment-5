@@ -24,12 +24,24 @@ const Nav = () => {
 
 
                     {/* Logo */}
-                    <div className="navIcon flex justify-center lg:justify-start">
-                        <img
-                            className='scale-[1.2] lg:scale-[1.5] w-auto object-contain'
-                            src={Logo}
-                            alt=""
-                        />
+                    <div className="navIcon flex items-center justify-center lg:justify-start gap-3">
+                        <div className='w-16 h-16 overflow-hidden relative'>
+                            <img
+                                className='absolute w-[255px] max-w-none h-auto -left-[2px] -top-[2px]'
+                                src={Logo}
+                                alt="DS logo"
+                            />
+                        </div>
+                            
+                     
+                        <span
+                            className="text-4xl font-bold   items-center z-20
+                            bg-linear-to-r from-orange-400 via-pink-400 to-violet-800
+                            bg-clip-text text-transparent"
+                        >
+                            Dev Stack
+                        </span>
+                
                     </div>
 
 
